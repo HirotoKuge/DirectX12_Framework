@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DirectX12">
+      <UniqueIdentifier>{c0091c9b-6e67-482b-91eb-41d590c47a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{636437f3-6a10-400a-9373-6df42b81989c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{14220ab0-092f-4866-a47f-70c885e36a82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Buffer">
+      <UniqueIdentifier>{6937e3e8-8954-4d16-9984-58501d71ece5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\RootSignature">
+      <UniqueIdentifier>{4a752caa-b135-4259-a754-3c93bc1d5a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL">
+      <UniqueIdentifier>{dd516686-42eb-4ff9-9ecb-071b63edfe90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\VertexShader">
+      <UniqueIdentifier>{d4a4e210-5798-4790-9b8a-bcb1f351d3c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\PixcelShader">
+      <UniqueIdentifier>{b18945f8-7c70-4e11-acbc-d91aa25be76a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\PipelineState">
+      <UniqueIdentifier>{c1a911c1-cf3f-474a-84cd-afdb4d874c99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Texture">
+      <UniqueIdentifier>{34e23a52-2b4f-4982-b4bb-bd510574571a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{70b8cbeb-4007-40b9-a1eb-0044aa8674c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObject">
+      <UniqueIdentifier>{3c41e48a-fafe-4234-9fd4-97f81210ad2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Manager">
+      <UniqueIdentifier>{5f050a95-06a0-4223-babd-623625cc93b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Manager\ModelManager">
+      <UniqueIdentifier>{9e43d993-85fc-490e-a17b-f60b64ea9eea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Manager\ObjectManager">
+      <UniqueIdentifier>{49ab140d-304b-4434-a6aa-8332cf433b36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Component">
+      <UniqueIdentifier>{0a29b27b-8401-4cd1-b0c0-8da2cd060fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObject\Actor">
+      <UniqueIdentifier>{fd13026b-5727-4625-8df4-78960354b89d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModelData">
+      <UniqueIdentifier>{a74724a9-68bd-4ce9-8803-c2ee12f63eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{8cbb752b-3062-4478-8a76-8ef612d7924b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\TitileScene">
+      <UniqueIdentifier>{feb6424d-69d8-4e51-a0c7-e1b46209a2fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\GameScene">
+      <UniqueIdentifier>{868b1781-605c-4c78-9ef4-28cd90eec439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\ResultScene">
+      <UniqueIdentifier>{d3890547-17b7-4e4c-97b5-7c4026a75642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{192317e0-f64f-4b57-b7c2-e7cc530532cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window\CallBack">
+      <UniqueIdentifier>{60fef596-83e5-4123-ba7c-77d968c0c597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\ComputeShader">
+      <UniqueIdentifier>{2e2a18fd-ec13-4cea-858f-fd2a73b9e808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Manager\SceneManager">
+      <UniqueIdentifier>{1671835c-0179-468f-ae5e-99d6db7dc929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\DeveropScene">
+      <UniqueIdentifier>{c3c7c851-9f36-499f-8f0b-e04d038b90c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Descriptor">
+      <UniqueIdentifier>{c223d5f7-eee1-4e97-9356-6560d5223ac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Descriptor\Pool">
+      <UniqueIdentifier>{27cc4fe5-5c80-423e-bd51-3a6e60727594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Descriptor\Pool\DescriptorPool">
+      <UniqueIdentifier>{f3e74716-ac4e-4da6-8ff9-890dfe8fa08a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Target">
+      <UniqueIdentifier>{880b34d4-c680-49a8-99ef-8c6d2e23a6bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Target\ColorTarget">
+      <UniqueIdentifier>{373d68e6-54e3-4006-aeef-403bcee47657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Target\DepthTarget">
+      <UniqueIdentifier>{3b26207b-02fd-43bc-a31a-3df210203b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\CommandList">
+      <UniqueIdentifier>{2e10dafe-5d38-4831-99bb-1387063b2828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Fence">
+      <UniqueIdentifier>{4dc16a27-4aef-4972-8dbc-39e205d26671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Buffer\ConstantBuffer">
+      <UniqueIdentifier>{38c09869-d893-4ccf-97b7-73022898638e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Buffer\IndexBuffer">
+      <UniqueIdentifier>{43230bee-847b-48c4-a31c-97bc80073544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Buffer\VertexBuffer">
+      <UniqueIdentifier>{e5c8dac0-4c6e-4db1-b36c-1db0d19b4d0b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="App.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsEngine.cpp">
+      <Filter>DirectX12</Filter>
+    </ClCompile>
+    <ClCompile Include="BaceScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>DirectX12\Buffer\VertexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>DirectX12\Buffer\ConstantBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaerdStruct.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>DirectX12\Buffer\IndexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Game\GameObject\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Game\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowCallback.cpp">
+      <Filter>Window\CallBack</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Game\Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DescriptorPool.cpp">
+      <Filter>DirectX12\Descriptor\Pool\DescriptorPool</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorTarget.cpp">
+      <Filter>DirectX12\Target\ColorTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthTarget.cpp">
+      <Filter>DirectX12\Target\DepthTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandList.cpp">
+      <Filter>DirectX12\CommandList</Filter>
+    </ClCompile>
+    <ClCompile Include="Fence.cpp">
+      <Filter>DirectX12\Fence</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="ComPtr.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsEngine.h">
+      <Filter>DirectX12</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedStruct.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="BaceScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>DirectX12\Buffer\VertexBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>DirectX12\Buffer\ConstantBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>DirectX12\Buffer\IndexBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Game\GameObject\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Game\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowCallback.h">
+      <Filter>Window\CallBack</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Game\Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Pool.h">
+      <Filter>DirectX12\Descriptor\Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="DescriptorPool.h">
+      <Filter>DirectX12\Descriptor\Pool\DescriptorPool</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorTarget.h">
+      <Filter>DirectX12\Target\ColorTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthTarget.h">
+      <Filter>DirectX12\Target\DepthTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandList.h">
+      <Filter>DirectX12\CommandList</Filter>
+    </ClInclude>
+    <ClInclude Include="Fence.h">
+      <Filter>DirectX12\Fence</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="SimpleVS.hlsl">
+      <Filter>HLSL\VertexShader</Filter>
+    </FxCompile>
+    <FxCompile Include="SimplePS.hlsl">
+      <Filter>HLSL\PixcelShader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
