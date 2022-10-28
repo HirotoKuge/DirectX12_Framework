@@ -10,7 +10,7 @@
 // Includes.
 //-----------------------------------------------------------------------------
 #include "ColorTarget.h"
-#include"DescriptorPool.h"
+#include "DescriptorPool.h"
 
 //-----------------------------------------------------------------------------
 // コンストラクタ
@@ -76,7 +76,7 @@ bool ColorTarget::Init(
     desc.SampleDesc.Quality = 0;
     desc.Layout = D3D12_TEXTURE_LAYOUT_UNKNOWN;
     desc.Flags = D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET;
-
+    
     // クリアカラーの設定
     D3D12_CLEAR_VALUE clearValue;
     clearValue.Format = format;

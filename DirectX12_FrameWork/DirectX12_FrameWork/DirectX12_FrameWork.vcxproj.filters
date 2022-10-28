@@ -19,17 +19,8 @@
     <Filter Include="HLSL">
       <UniqueIdentifier>{dd516686-42eb-4ff9-9ecb-071b63edfe90}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HLSL\VertexShader">
-      <UniqueIdentifier>{d4a4e210-5798-4790-9b8a-bcb1f351d3c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="HLSL\PixcelShader">
       <UniqueIdentifier>{b18945f8-7c70-4e11-acbc-d91aa25be76a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DirectX12\PipelineState">
-      <UniqueIdentifier>{c1a911c1-cf3f-474a-84cd-afdb4d874c99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DirectX12\Texture">
-      <UniqueIdentifier>{34e23a52-2b4f-4982-b4bb-bd510574571a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{70b8cbeb-4007-40b9-a1eb-0044aa8674c0}</UniqueIdentifier>
@@ -52,9 +43,6 @@
     <Filter Include="Game\GameObject\Actor">
       <UniqueIdentifier>{fd13026b-5727-4625-8df4-78960354b89d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ModelData">
-      <UniqueIdentifier>{a74724a9-68bd-4ce9-8803-c2ee12f63eb2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\Scene">
       <UniqueIdentifier>{8cbb752b-3062-4478-8a76-8ef612d7924b}</UniqueIdentifier>
     </Filter>
@@ -66,12 +54,6 @@
     </Filter>
     <Filter Include="Game\Scene\ResultScene">
       <UniqueIdentifier>{d3890547-17b7-4e4c-97b5-7c4026a75642}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Window">
-      <UniqueIdentifier>{192317e0-f64f-4b57-b7c2-e7cc530532cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Window\CallBack">
-      <UniqueIdentifier>{60fef596-83e5-4123-ba7c-77d968c0c597}</UniqueIdentifier>
     </Filter>
     <Filter Include="HLSL\ComputeShader">
       <UniqueIdentifier>{2e2a18fd-ec13-4cea-858f-fd2a73b9e808}</UniqueIdentifier>
@@ -91,15 +73,6 @@
     <Filter Include="DirectX12\Descriptor\Pool\DescriptorPool">
       <UniqueIdentifier>{f3e74716-ac4e-4da6-8ff9-890dfe8fa08a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DirectX12\Target">
-      <UniqueIdentifier>{880b34d4-c680-49a8-99ef-8c6d2e23a6bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DirectX12\Target\ColorTarget">
-      <UniqueIdentifier>{373d68e6-54e3-4006-aeef-403bcee47657}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DirectX12\Target\DepthTarget">
-      <UniqueIdentifier>{3b26207b-02fd-43bc-a31a-3df210203b86}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DirectX12\CommandList">
       <UniqueIdentifier>{2e10dafe-5d38-4831-99bb-1387063b2828}</UniqueIdentifier>
     </Filter>
@@ -114,6 +87,54 @@
     </Filter>
     <Filter Include="DirectX12\Buffer\VertexBuffer">
       <UniqueIdentifier>{e5c8dac0-4c6e-4db1-b36c-1db0d19b4d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Window">
+      <UniqueIdentifier>{192317e0-f64f-4b57-b7c2-e7cc530532cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Window\CallBack">
+      <UniqueIdentifier>{60fef596-83e5-4123-ba7c-77d968c0c597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Logger">
+      <UniqueIdentifier>{a8336ec9-8efb-4951-8dc4-a98063920a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\math">
+      <UniqueIdentifier>{92b13265-0e83-4d70-a4db-b4d47ddc58e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\File">
+      <UniqueIdentifier>{2ce3dabf-6424-4c87-917b-b0a37641495b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model">
+      <UniqueIdentifier>{21a4d7b2-33e8-4aae-aaea-cb9d79e70a16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse">
+      <UniqueIdentifier>{54ac319a-ab61-4887-b261-b4188d190f80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse\Loader">
+      <UniqueIdentifier>{af3cc894-72bc-457d-9999-15e51b5bcdeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse\Material">
+      <UniqueIdentifier>{bc3da1b1-693e-4334-b49b-c928c2d85450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse\Material\Texture">
+      <UniqueIdentifier>{09d704a7-0a32-4bfb-9249-6359752b9dcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse\Mesh">
+      <UniqueIdentifier>{119aed26-37da-4c3d-a6b6-45e8dbfe9ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse\Sprite">
+      <UniqueIdentifier>{83e723c9-95eb-4b89-91ab-9971616661f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\RenderTarget">
+      <UniqueIdentifier>{880b34d4-c680-49a8-99ef-8c6d2e23a6bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\RenderTarget\ColorTarget">
+      <UniqueIdentifier>{373d68e6-54e3-4006-aeef-403bcee47657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\RenderTarget\DepthTarget">
+      <UniqueIdentifier>{3b26207b-02fd-43bc-a31a-3df210203b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\VertexShader">
+      <UniqueIdentifier>{d4a4e210-5798-4790-9b8a-bcb1f351d3c3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -148,14 +169,11 @@
     <ClCompile Include="Component.cpp">
       <Filter>Game\Component</Filter>
     </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Util</Filter>
-    </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Window</Filter>
+      <Filter>Util\Window</Filter>
     </ClCompile>
     <ClCompile Include="WindowCallback.cpp">
-      <Filter>Window\CallBack</Filter>
+      <Filter>Util\Window\CallBack</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Game\Manager\SceneManager</Filter>
@@ -164,16 +182,46 @@
       <Filter>DirectX12\Descriptor\Pool\DescriptorPool</Filter>
     </ClCompile>
     <ClCompile Include="ColorTarget.cpp">
-      <Filter>DirectX12\Target\ColorTarget</Filter>
+      <Filter>DirectX12\RenderTarget\ColorTarget</Filter>
     </ClCompile>
     <ClCompile Include="DepthTarget.cpp">
-      <Filter>DirectX12\Target\DepthTarget</Filter>
+      <Filter>DirectX12\RenderTarget\DepthTarget</Filter>
     </ClCompile>
     <ClCompile Include="CommandList.cpp">
       <Filter>DirectX12\CommandList</Filter>
     </ClCompile>
     <ClCompile Include="Fence.cpp">
       <Filter>DirectX12\Fence</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Util\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Util\math</Filter>
+    </ClCompile>
+    <ClCompile Include="FileUtil.cpp">
+      <Filter>Util\File</Filter>
+    </ClCompile>
+    <ClCompile Include="MDLoader.cpp">
+      <Filter>DirectX12\Model\Resouse\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>DirectX12\Model\Resouse\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>DirectX12\Model\Resouse\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>DirectX12\Model\Resouse\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>DirectX12\Model\Resouse\Material\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>DirectX12\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTarget.cpp">
+      <Filter>DirectX12\RenderTarget</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,17 +255,14 @@
     <ClInclude Include="Game.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Util</Filter>
-    </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Game\Component</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
-      <Filter>Window</Filter>
+      <Filter>Util\Window</Filter>
     </ClInclude>
     <ClInclude Include="WindowCallback.h">
-      <Filter>Window\CallBack</Filter>
+      <Filter>Util\Window\CallBack</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Game\Manager\SceneManager</Filter>
@@ -229,10 +274,10 @@
       <Filter>DirectX12\Descriptor\Pool\DescriptorPool</Filter>
     </ClInclude>
     <ClInclude Include="ColorTarget.h">
-      <Filter>DirectX12\Target\ColorTarget</Filter>
+      <Filter>DirectX12\RenderTarget\ColorTarget</Filter>
     </ClInclude>
     <ClInclude Include="DepthTarget.h">
-      <Filter>DirectX12\Target\DepthTarget</Filter>
+      <Filter>DirectX12\RenderTarget\DepthTarget</Filter>
     </ClInclude>
     <ClInclude Include="CommandList.h">
       <Filter>DirectX12\CommandList</Filter>
@@ -240,12 +285,48 @@
     <ClInclude Include="Fence.h">
       <Filter>DirectX12\Fence</Filter>
     </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Util\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Util\math</Filter>
+    </ClInclude>
+    <ClInclude Include="FileUtil.h">
+      <Filter>Util\File</Filter>
+    </ClInclude>
+    <ClInclude Include="MDLoader.h">
+      <Filter>DirectX12\Model\Resouse\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>DirectX12\Model\Resouse\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>DirectX12\Model\Resouse\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>DirectX12\Model\Resouse\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>DirectX12\Model\Resouse\Material\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>DirectX12\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget.h">
+      <Filter>DirectX12\RenderTarget</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="SimpleVS.hlsl">
       <Filter>HLSL\VertexShader</Filter>
     </FxCompile>
     <FxCompile Include="SimplePS.hlsl">
+      <Filter>HLSL\PixcelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="SimpleTexVS.hlsl">
+      <Filter>HLSL\VertexShader</Filter>
+    </FxCompile>
+    <FxCompile Include="SimpleTexPS.hlsl">
       <Filter>HLSL\PixcelShader</Filter>
     </FxCompile>
   </ItemGroup>

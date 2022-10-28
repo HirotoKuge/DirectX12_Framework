@@ -13,6 +13,8 @@
 #include "App.h"
 #include "Window.h"
 #include "GraphicsEngine.h"
+#include "Model.h"
+#include "Logger.h"
 
 #pragma comment (lib,"winmm.lib")
 #pragma comment (lib,"dxgi.lib")
@@ -39,6 +41,8 @@ uint32_t	Application::SYSTEM_WIDTH = 0;
 uint32_t	Application::SYSTEM_HEIGHT = 0;
 
 const float	Application::FPS = 60;
+
+Model* pModel;
 
 /**************************************************//**
  * ￥brief　コンストラクタ
@@ -114,6 +118,23 @@ bool Application::Init(HINSTANCE hInstance) {
 	//DirectX12初期化
 	GraphicsEngine::GetInstance()->Init(mHWnd, CLIENT_WIDTH, CLIENT_HEIGHT);
 
+	pModel = new Model();
+
+	std::wstring mdPath;
+	std::wstring mtPath;
+
+	bool hr = pModel->Init(
+						GraphicsEngine::GetInstance()->GetDevice(), 
+						GraphicsEngine::GetInstance()->GetDiscriptaPool(GraphicsEngine::POOL_TYPE::POOL_TYPE_RES),
+						L"assets/teapot/Teapot.md",
+						L"assets/teapot/Teapot.mt");
+
+
+	if (hr == false) {
+		ELOG("Error : Failed Init Model");
+		return false;
+	}
+
 	return true;
 }
 
@@ -145,6 +166,10 @@ unsigned long Application::MainLoop(){
 
 		//ここでゲームの更新処理
 		GraphicsEngine::GetInstance()->BeginRender();
+		
+		pModel->Draw(
+			GraphicsEngine::GetInstance()->GetCommandList(),
+			GraphicsEngine::GetInstance()->GetDiscriptaPool(GraphicsEngine::POOL_TYPE::POOL_TYPE_RES));
 		
 		GraphicsEngine::GetInstance()->EndRender();
 

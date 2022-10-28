@@ -33,11 +33,7 @@
 
 
 
-//DirectX12の描画基盤となる機能をまとめたクラス
-//シングルトンパターンの実装
-//→各種バッファなどからデバイスのインターフェースにアクセスしたい場合が多いため
-//引数でポインタを渡す実装では仮にGraphicsEngineクラスが破棄されたときにオブジェクトが検知できないため
-//→オブザーバーパターンを用いれば可能ではあるが参照したい箇所が多いのでシングルトンのほうが効率的だと判断
+// TODO：シングルトンは悪
 class GraphicsEngine {
 	//-----------------------------------------------------------------------------
 	// list of friend classes and methods.
@@ -146,8 +142,8 @@ private:
 	ComPtr<ID3D12Device>        m_pDevice;                  // デバイス
 	ComPtr<ID3D12CommandQueue>  m_pQueue;                   // コマンドキュー
 	ComPtr<IDXGISwapChain3>     m_pSwapChain;               // スワップチェイン
-	ColorTarget                 m_ColorTarget[FrameCount];  // カラーターゲット
-	DepthTarget                 m_DepthTarget;              // 深度ターゲット
+	ColorTarget                 m_ColorTarget[FrameCount];  // カラーターゲット(フレームバッファ用)
+	DepthTarget                 m_DepthTarget;              // 深度ターゲット(フレームバッファ用)
 	DescriptorPool*				m_pPool[POOL_COUNT];		// ディスクリプタプール
 	CommandList                 m_CommandList;              // コマンドリスト
 	Fence                       m_Fence;                    // フェンス

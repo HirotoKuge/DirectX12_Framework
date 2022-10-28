@@ -8,7 +8,6 @@ bool Game::Init(){
 	
 
 	return true;
-
 }
 
 

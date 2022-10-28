@@ -1,9 +1,17 @@
+/*****************************************************************//**
+ * \file   GraphicsEngine.cpp
+ * \brief  描画エンジン
+ * 
+ * \author Hiroto Kuge
+ * \date   October 2022
+ *********************************************************************/
 #include "GraphicsEngine.h"
 #include <d3d12.h>
 #include <stdio.h>
 #include <Windows.h>
 #include <debugapi.h>
-#include"SharedStruct.h"
+#include "SharedStruct.h"
+#include "Logger.h"
 
 
 
@@ -15,7 +23,7 @@ GraphicsEngine::GraphicsEngine()
     ,m_pQueue(nullptr)
     ,m_pSwapChain(nullptr)
     , m_pPool{ nullptr }
-{}
+{ /* Do Nothing */ }
 
 
 #pragma region DirectX12Create
@@ -62,7 +70,6 @@ bool GraphicsEngine::Init(HWND hwnd, UINT windowWidth, UINT windowHeight){
             D3D_FEATURE_LEVEL_11_1,
             D3D_FEATURE_LEVEL_11_0,
         };
-
 
         //生成可能なデバイスレベルを調べる
         for (auto lv : levels) {
@@ -136,7 +143,7 @@ bool GraphicsEngine::Init(HWND hwnd, UINT windowWidth, UINT windowHeight){
         pSwapChain.Reset();
     }
 
-    // ディスクリプタプールの生成.
+    // ディスクリプタプールの生成 ( ディスクリプタを種類ごとにまとめとくやつみたいなイメージ )
     {
         D3D12_DESCRIPTOR_HEAP_DESC desc = {};
 
@@ -175,7 +182,7 @@ bool GraphicsEngine::Init(HWND hwnd, UINT windowWidth, UINT windowHeight){
         { return false; }
     }
 
-    // レンダーターゲットビューの生成.
+    // フレームバッファ用のレンダーターゲットビューの生成.
     {
         for (auto i = 0u; i < FrameCount; ++i){
             if (!m_ColorTarget[i].InitFromBackBuffer(
@@ -187,7 +194,7 @@ bool GraphicsEngine::Init(HWND hwnd, UINT windowWidth, UINT windowHeight){
         }
     }
 
-    // 深度ステンシルバッファの生成
+    // フレームバッファ用の深度ステンシルビューの生成
     {
         if (!m_DepthTarget.Init(
             m_pDevice.Get(),
@@ -200,9 +207,7 @@ bool GraphicsEngine::Init(HWND hwnd, UINT windowWidth, UINT windowHeight){
 
     // フェンスの生成.
     if (!m_Fence.Init(m_pDevice.Get()))
-    {
-        return false;
-    }
+    { return false; }
 
     // ビューポートの設定.
     {
@@ -226,18 +231,19 @@ bool GraphicsEngine::Init(HWND hwnd, UINT windowWidth, UINT windowHeight){
     return true;
 	
 
-	OutputDebugString(L"描画エンジンの初期化に成功");
+	DLOG("描画エンジンの初期化に成功");
 
 	return true;
 }
 #pragma endregion
 
 #pragma region DirectX12Render
+
 void GraphicsEngine::BeginRender(){
     // コマンドリストの記録を開始.
     m_pNowCmdList = m_CommandList.GetListReset();
 
-    // 書き込み用リソースバリア設定
+    // 書き込み用リソースバリア設定 描画モードから書き込みモードに切り替える
     D3D12_RESOURCE_BARRIER barriarDesc = {};
     barriarDesc.Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;
     barriarDesc.Flags = D3D12_RESOURCE_BARRIER_FLAG_NONE;
@@ -248,15 +254,20 @@ void GraphicsEngine::BeginRender(){
 
     m_pNowCmdList->ResourceBarrier(1, &barriarDesc);
 
-    // ディスクリプタ取得.
+    // ビューポートとシザー矩形を設定
+    m_pNowCmdList->RSSetViewports(1,&m_Viewport);
+    m_pNowCmdList->RSSetScissorRects(1,&m_Scissor);
+   
+    // フレームバッファ用のディスクリプタ取得
     auto handleRTV = m_ColorTarget[m_frameIndex].GetHandleRTV();
     auto handleDSV = m_DepthTarget.GetHandleDSV();
 
-    // レンダーターゲットを設定.
+    // レンダーターゲットをフレームバッファに設定
+    // TODO:MRTに対応させるためにレンダーターゲットクラスとレンダーコンテキストクラスを作る
     m_pNowCmdList->OMSetRenderTargets(1, &handleRTV->HandleCPU, FALSE, &handleDSV->HandleCPU);
 
     // クリアカラー.
-    float clearColor[] = { 1.0f, 0.25f, 0.25f, 1.0f };
+    float clearColor[] = { 0.25f, 0.25f, 0.25f, 1.0f };
 
     // レンダーターゲットをクリア.
     m_pNowCmdList->ClearRenderTargetView(handleRTV->HandleCPU, clearColor, 0, nullptr);
