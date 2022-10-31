@@ -15,6 +15,11 @@
 #include "Mesh.h"
 #include "Material.h"
 
+//-----------------------------------------------------------------------------
+// Forword Decolations
+//-----------------------------------------------------------------------------
+class PipelineState;
+class RootSignature;
 
 //-----------------------------------------------------------------------------
 // Model Class
@@ -27,6 +32,15 @@ class Model{
 			/* Nothing */
 	//!} 
 public:
+	//=============================================================================
+	// enum
+	//=============================================================================
+	enum PIPELINE_STATE_TYPE{
+		BASIC = 0,	// 基本
+		MAX			// 定義数
+	};
+
+
 	//-----------------------------------------------------------------------------
 	// public variables.
 	//-----------------------------------------------------------------------------
@@ -67,10 +81,15 @@ public:
 	/*****************************************************************//**
 	 * \brief 描画処理
 	 * 
-	 * \param pCmdList コマンドリスト
-	 * \param pHeapRes ディスクリプタプール(CBV,SRV,UAV)
+	 * \param pCmdList		コマンドリスト
+	 * \param pHeapRes		ディスクリプタプール(CBV,SRV,UAV)
+	 * \param nowFrameCnt	現在のフレームバッファ番号
 	 *********************************************************************/
-	void Draw(ID3D12GraphicsCommandList* pCmdList, DescriptorPool* pPoolRes);
+	void Draw(
+		ID3D12GraphicsCommandList* pCmdList, 
+		DescriptorPool* pPoolRes,
+		uint32_t nowFrameCnt
+		);
 
 	/*****************************************************************//**
 	 * \brief 終了処理
@@ -84,14 +103,15 @@ private:
 	//-----------------------------------------------------------------------------
 	//!{
 	
-	std::vector<Mesh*>              m_pMeshes;          // メッシュ
-	std::vector<ConstantBuffer*>    m_Transform;        // 変換行列
-	Material                        m_Material;         // マテリアル
-	ComPtr<ID3D12PipelineState>     m_pPSO;             // パイプラインステート
-	ComPtr<ID3D12RootSignature>     m_pRootSig;         // ルートシグニチャ
-	std::wstring					m_directoryPath;	// ディレクトリパス
+	std::vector<Mesh*>              m_pMeshes;					    // メッシュ
+	std::vector<ConstantBuffer*>    m_Transform;				    // 変換行列
+	Material                        m_Material;					    // マテリアル
+	std::wstring					m_directoryPath;				// ディレクトリパス
 
-	static MDLoader					m_loader;			// リソースローダーです
+	std::unique_ptr<RootSignature>	m_pRootSignatures[PIPELINE_STATE_TYPE::MAX] = { nullptr };	// ルートシグネチャ
+	std::unique_ptr<PipelineState>	m_pPipelineStates[PIPELINE_STATE_TYPE::MAX] = { nullptr };	// パイプラインステート
+
+	static MDLoader	m_loader; // リソースローダー
 	
 	//!}
 	//-----------------------------------------------------------------------------
@@ -101,6 +121,7 @@ private:
 	 
 	Model(const Model&) = delete;			 // アクセス禁止
 	void operator = (const Model&) = delete; //	アクセス禁止
+
 	//!} 
 };
 

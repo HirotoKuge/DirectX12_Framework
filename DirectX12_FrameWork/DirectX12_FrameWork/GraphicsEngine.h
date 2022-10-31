@@ -47,11 +47,11 @@ public:
 	// PoolType enum
 	//-----------------------------------------------------------------------------
 	enum POOL_TYPE {
-		POOL_TYPE_RES	= 0,     // CBV / SRV / UAV
-		POOL_TYPE_SMP	= 1,     // Sampler
-		POOL_TYPE_RTV	= 2,     // RTV
-		POOL_TYPE_DSV	= 3,     // DSV
-		POOL_COUNT		= 4,
+		POOL_TYPE_RES	= 0,    // CBV / SRV / UAV
+		POOL_TYPE_SMP	= 1,    // Sampler
+		POOL_TYPE_RTV	= 2,    // RTV
+		POOL_TYPE_DSV	= 3,    // DSV
+		POOL_COUNT		= 4,	// 定義数
 	};
 
 	//-----------------------------------------------------------------------------
@@ -66,13 +66,14 @@ public:
 	//!{
 	
 	/*****************************************************************//**
-	 * \brief	インスタンス取得
-	 * \return	インスタンスアドレス
+	 * \brief コンストラクタ
 	 *********************************************************************/
-	static GraphicsEngine* GetInstance() {
-		static GraphicsEngine pInstance;
-		return &pInstance;
-	}
+	GraphicsEngine();
+
+	/*****************************************************************//**
+	 * \brief デストラクタ
+	 *********************************************************************/
+	~GraphicsEngine();
 
 	/*****************************************************************//**
 	 * \brief 初期化処理
@@ -99,6 +100,8 @@ public:
 	 *********************************************************************/
 	void EndRender();
 
+#pragma region Getter
+
 	/*****************************************************************//**
 	 * \brief	デバイスを取得
 	 * \return	デバイス
@@ -123,6 +126,8 @@ public:
 	 * \return ディスクリプタプール
 	 *********************************************************************/
 	DescriptorPool* GetDiscriptaPool(POOL_TYPE poolType)const;
+
+#pragma endregion
 
 	//!}
 private:
@@ -160,7 +165,7 @@ private:
 	// private methods.
 	//-----------------------------------------------------------------------------
 	//!{
-	GraphicsEngine();
+
 	
 	//!} 
 };

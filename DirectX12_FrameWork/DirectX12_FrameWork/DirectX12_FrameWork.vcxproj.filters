@@ -13,9 +13,6 @@
     <Filter Include="DirectX12\Buffer">
       <UniqueIdentifier>{6937e3e8-8954-4d16-9984-58501d71ece5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DirectX12\RootSignature">
-      <UniqueIdentifier>{4a752caa-b135-4259-a754-3c93bc1d5a98}</UniqueIdentifier>
-    </Filter>
     <Filter Include="HLSL">
       <UniqueIdentifier>{dd516686-42eb-4ff9-9ecb-071b63edfe90}</UniqueIdentifier>
     </Filter>
@@ -115,9 +112,6 @@
     <Filter Include="DirectX12\Model\Resouse\Material">
       <UniqueIdentifier>{bc3da1b1-693e-4334-b49b-c928c2d85450}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DirectX12\Model\Resouse\Material\Texture">
-      <UniqueIdentifier>{09d704a7-0a32-4bfb-9249-6359752b9dcd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DirectX12\Model\Resouse\Mesh">
       <UniqueIdentifier>{119aed26-37da-4c3d-a6b6-45e8dbfe9ea1}</UniqueIdentifier>
     </Filter>
@@ -135,6 +129,15 @@
     </Filter>
     <Filter Include="HLSL\VertexShader">
       <UniqueIdentifier>{d4a4e210-5798-4790-9b8a-bcb1f351d3c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\Model\Resouse\Texture">
+      <UniqueIdentifier>{09d704a7-0a32-4bfb-9249-6359752b9dcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\PipeLineState">
+      <UniqueIdentifier>{09219aa7-d742-4125-925f-1f05316c4867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX12\RootSignature">
+      <UniqueIdentifier>{0d17ec23-56e0-481d-8173-7753e7fe0ac8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -215,13 +218,19 @@
       <Filter>DirectX12\Model\Resouse\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
-      <Filter>DirectX12\Model\Resouse\Material\Texture</Filter>
+      <Filter>DirectX12\Model\Resouse\Texture</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
       <Filter>DirectX12\Model</Filter>
     </ClCompile>
     <ClCompile Include="RenderTarget.cpp">
       <Filter>DirectX12\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="PipelineState.cpp">
+      <Filter>DirectX12\PipeLineState</Filter>
+    </ClCompile>
+    <ClCompile Include="RootSignature.cpp">
+      <Filter>DirectX12\RootSignature</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,13 +316,19 @@
       <Filter>DirectX12\Model\Resouse\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
-      <Filter>DirectX12\Model\Resouse\Material\Texture</Filter>
+      <Filter>DirectX12\Model\Resouse\Texture</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>DirectX12\Model</Filter>
     </ClInclude>
     <ClInclude Include="RenderTarget.h">
       <Filter>DirectX12\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="PipelineState.h">
+      <Filter>DirectX12\PipeLineState</Filter>
+    </ClInclude>
+    <ClInclude Include="RootSignature.h">
+      <Filter>DirectX12\RootSignature</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

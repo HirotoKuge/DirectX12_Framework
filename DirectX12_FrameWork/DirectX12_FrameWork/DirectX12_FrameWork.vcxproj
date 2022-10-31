@@ -173,7 +173,9 @@
     <ClCompile Include="MDLoader.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PipelineState.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
+    <ClCompile Include="RootSignature.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ShaerdStruct.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -205,8 +207,10 @@
     <ClInclude Include="MDLoader.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="PipelineState.h" />
     <ClInclude Include="Pool.h" />
     <ClInclude Include="RenderTarget.h" />
+    <ClInclude Include="RootSignature.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SharedStruct.h" />
     <ClInclude Include="Sprite.h" />

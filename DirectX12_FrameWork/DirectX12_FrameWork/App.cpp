@@ -116,22 +116,23 @@ bool Application::Init(HINSTANCE hInstance) {
 	mHInst = hInstance;
 
 	//DirectX12初期化
-	GraphicsEngine::GetInstance()->Init(mHWnd, CLIENT_WIDTH, CLIENT_HEIGHT);
+	m_pGraphicsEngine = std::make_unique<GraphicsEngine>();
+	bool isSuccessed = m_pGraphicsEngine->Init(mHWnd, CLIENT_WIDTH, CLIENT_HEIGHT);
+
+	if (isSuccessed == false) {
+		return false;
+	}
+
 
 	pModel = new Model();
 
-	std::wstring mdPath;
-	std::wstring mtPath;
+	isSuccessed = pModel->Init(
+		m_pGraphicsEngine->GetDevice(),
+		m_pGraphicsEngine->GetDiscriptaPool(GraphicsEngine::POOL_TYPE::POOL_TYPE_RES),
+		L"assets/teapot/Teapot.md",
+		L"assets/teapot/Teapot.mt");
 
-	bool hr = pModel->Init(
-						GraphicsEngine::GetInstance()->GetDevice(), 
-						GraphicsEngine::GetInstance()->GetDiscriptaPool(GraphicsEngine::POOL_TYPE::POOL_TYPE_RES),
-						L"assets/teapot/Teapot.md",
-						L"assets/teapot/Teapot.mt");
-
-
-	if (hr == false) {
-		ELOG("Error : Failed Init Model");
+	if(isSuccessed == false) {
 		return false;
 	}
 
@@ -158,24 +159,31 @@ unsigned long Application::MainLoop(){
 	ZeroMemory(&msg, sizeof(msg));
 
 	clock_t current_time = 0;	//アプリケーション開始からの現在の経過時間
-	clock_t last_time = 0;			//アプリケーション開始からの前回フレームの開始時間
+	clock_t last_time = 0;		//アプリケーション開始からの前回フレームの開始時間
 
 
 
 	while (mWndInstance->ExecMessage()) {
 
 		//ここでゲームの更新処理
-		GraphicsEngine::GetInstance()->BeginRender();
-		
+		m_pGraphicsEngine->BeginRender();
+
 		pModel->Draw(
-			GraphicsEngine::GetInstance()->GetCommandList(),
-			GraphicsEngine::GetInstance()->GetDiscriptaPool(GraphicsEngine::POOL_TYPE::POOL_TYPE_RES));
-		
-		GraphicsEngine::GetInstance()->EndRender();
+			m_pGraphicsEngine->GetCommandList(),
+			m_pGraphicsEngine->GetDiscriptaPool(GraphicsEngine::POOL_TYPE::POOL_TYPE_RES),
+			m_pGraphicsEngine->GetCurrentFrameIndex()
+			);
+
+		m_pGraphicsEngine->EndRender();
+
 
 	}
 
 	//ここでゲームの終了処理をするんよ^^
+
+
+
+	
 
 	return mWndInstance->GetMessage();
 }

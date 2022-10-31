@@ -3,10 +3,11 @@
 #include <stdio.h>
 #include <cinttypes>
 #include <wrl/client.h>
+#include <memory>
 
 #include "Window.h"
 
-
+class GraphicsEngine;
 
 class Application {
 public:
@@ -36,12 +37,11 @@ private:
 	Window* mWndInstance;
 
 private:
-	Application();	// コンストラクタ
-
+	Application();									// コンストラクタ
 	Application(const Application&);				// コピー
 	Application& operator = (const Application&) {}	// =
-
-	void Update(uint64_t deltataime);	// 更新
+	
+	std::unique_ptr<GraphicsEngine> m_pGraphicsEngine;
 	
 public:
 	virtual ~Application();		// デストラクタ
